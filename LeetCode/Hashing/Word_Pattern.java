@@ -1,6 +1,6 @@
 /* 
 Leetcode 290. Word Pattern
-Link: <https://leetcode.com/problems/word-pattern/>
+Link: https://leetcode.com/problems/word-pattern/
 */
 
 package LeetCode.Hashing;
