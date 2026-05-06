@@ -1,0 +1,34 @@
+//Leetcode 567. Permutation In String
+// https://leetcode.com/problems/permutation-in-string/
+
+package LeetCode.SlidingWindow;
+
+import java.util.Arrays;
+
+class Solution {
+    public boolean checkInclusion(String s1, String s2) {
+
+        if (s1.length() > s2.length()) return false;
+
+        int[] s1Freq = new int[26];
+        int[] windowFreq = new int[26];
+
+        for (char c : s1.toCharArray()) {
+            s1Freq[c - 'a']++;
+        }
+
+        int k = s1.length();
+
+        for (int i = 0; i < s2.length(); i++) {
+            windowFreq[s2.charAt(i) - 'a']++;
+            if (i >= k) {
+                windowFreq[s2.charAt(i - k) - 'a']--;
+            }
+            if (Arrays.equals(s1Freq, windowFreq)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+}
