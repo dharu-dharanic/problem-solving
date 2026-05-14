@@ -1,4 +1,4 @@
-package LeetCode.SlidingWindow;
+package LeetCode.TwoPointer;
 
 class Solution {
     public int maxArea(int[] height) {
