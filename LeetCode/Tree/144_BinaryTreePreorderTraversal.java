@@ -1,0 +1,34 @@
+package LeetCode.Tree;
+
+/*
+Leetcode 144. Binary Tree Preorder Traversal
+https://leetcode.com/problems/binary-tree-preorder-traversal/
+
+Time Complexity: O(n)
+Space Complexity: O(h)
+*/
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Solution {
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+
+        List<Integer> result = new ArrayList<>();
+        preorder(root, result);
+
+        return result;
+    }
+
+    private void preorder(TreeNode root, List<Integer> result) {
+
+        if (root == null) {
+            return;
+        }
+
+        result.add(root.val);
+        preorder(root.left, result);
+        preorder(root.right, result);
+    }
+}
